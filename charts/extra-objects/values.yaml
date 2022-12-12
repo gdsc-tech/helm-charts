@@ -1,0 +1,8 @@
+# Objects can be a list or a map
+objects:
+
+# Override the name
+nameOverride:
+
+# Additional values can be added to enable templating into the objects being output
+# demo: "value"

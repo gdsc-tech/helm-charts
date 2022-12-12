@@ -1,0 +1,25 @@
+objects:
+  obj1:
+    apiVersion: v1
+    kind: MapObjectWithExistingLabels
+    metadata:
+      name: MapObjectWithExistingLabels
+      labels:
+        app.kubernetes.io/name: "ShouldNotBeOverwritten"
+    data:
+      hello: "{{ .Values.demo.hello }}"
+
+  obj2:
+    apiVersion: v1
+    kind: MapObjectWithoutMetadata
+    data:
+      hello: "{{ .Values.demo.hello }}"
+
+  '$##$-object-with-invalid-$##$label$##$-characters-$##$':
+    apiVersion: v1
+    kind: Test3
+    data:
+      hello: "{{ .Values.demo.hello }}"
+
+demo:
+  hello: "World"

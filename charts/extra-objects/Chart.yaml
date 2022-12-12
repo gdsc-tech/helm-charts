@@ -1,0 +1,5 @@
+apiVersion: v2
+name: extra-objects
+description: Helm chart to create additional Kubernetes objects
+type: application
+version: 1.0.0

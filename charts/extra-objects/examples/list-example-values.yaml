@@ -1,0 +1,17 @@
+objects:
+  - apiVersion: v1
+    kind: ListObjectWithExistingLabels
+    metadata:
+      name: ListObjectWithExistingLabels
+      labels:
+        app.kubernetes.io/name: "ShouldNotBeOverwritten"
+    data:
+      hello: "{{ .Values.demo.hello }}"
+
+  - apiVersion: v1
+    kind: ListObjectWithoutMetadata
+    data:
+      hello: "{{ .Values.demo.hello }}"
+
+demo:
+  hello: "World"

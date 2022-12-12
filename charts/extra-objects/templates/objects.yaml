@@ -1,0 +1,6 @@
+{{ range $key, $object := .Values.objects }}
+{{- $labels := fromYaml (include "extra.labels" (mergeOverwrite $ (dict "__key" $key))) }}
+{{- $_ := merge $object (dict "metadata" (dict "labels" $labels)) }}
+---
+{{ tpl (toYaml $object) $ }}
+{{- end }}
